@@ -10,6 +10,7 @@ Releasing script that adds multiple zabbix hosts at the same time without any ha
 - OTA Updates which can be disabled
 - UNIX version can convert files from CR LF to LF
 - More user-friendly prompts
+- %100 easier!
 
 ## Usage
 
@@ -22,7 +23,9 @@ To launch the script:
 ./zabbix_mass_import.ps1
 ```
 
-Output file will be created upon execution which user can import xml file via Zabbix Web Interface
+Input file should be formatted like "$hostname [tab] $ip". Dont forget to press "tab" key between $hostname and $ip. Also if you try to add hostname that contains unsupported chars, you'll get error message while importing. This char correction feature will be added later on... 
+
+Output file will be created upon execution which user can import xml file via Zabbix Web Interface.
 
 ![zabbix_mass_import](https://user-images.githubusercontent.com/57764369/208874180-cefc2527-b031-4365-b2c0-da1d14ced5de.gif)
 
