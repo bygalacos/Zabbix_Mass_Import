@@ -22,6 +22,7 @@ To launch the script:
 ./zabbix_mass_import.sh
 ./zabbix_mass_import.ps1
 ```
+Note: Try right click and "Run with Powershell" if you got errors while launching powershell script.
 
 Input file should be formatted like "$hostname [tab] $ip". Dont forget to press "tab" key between $hostname and $ip. Also if you try to add hostname that contains unsupported chars, you'll get error message while importing. This char correction feature will be added later on... 
 
