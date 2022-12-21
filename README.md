@@ -24,6 +24,8 @@ To launch the script:
 
 Output file will be created upon execution which user can import xml file via Zabbix Web Interface
 
+![zabbix_mass_import](https://user-images.githubusercontent.com/57764369/208874180-cefc2527-b031-4365-b2c0-da1d14ced5de.gif)
+
 ## License
 
 GPL-3.0
