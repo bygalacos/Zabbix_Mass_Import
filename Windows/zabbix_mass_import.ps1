@@ -61,6 +61,7 @@ $f_input = Read-Host 'File input'
 # Exit the script if the file does not exist
 if (-not (Test-Path $f_input)) {
   Write-Output "`nInput file does not exist. Aborting operation.`n"
+  Start-Sleep -Seconds 3
   exit 1
 }
 
@@ -78,6 +79,7 @@ if (Test-Path $f_output) {
   } else {
     # Exit the script if the user does not confirm
     Write-Output "`nAborting operation. Existing output file will not be modified.`n"
+    Start-Sleep -Seconds 3
     exit 1
   }
 }
