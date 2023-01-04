@@ -16,6 +16,10 @@ Releasing script that adds multiple zabbix hosts at the same time without any ha
 
 Zabbix Agent Script requires a Windows or Linux operating system, depending on which platform you're using.
 
+```sh
+First grant executable permissions using chmod +x zabbix_mass_import.sh
+```
+
 To launch the script:
 
 ```sh
