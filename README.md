@@ -14,7 +14,7 @@ Releasing script that adds multiple zabbix hosts at the same time without any ha
 
 ## Usage
 
-**Zabbix Mass Import Script** requires a Windows or Linux operating system, depending on which platform you're using.
+**Zabbix Mass Import** script requires a Windows or Linux operating system, depending on which platform you're using.
 
 ```sh
 First grant executable permissions using chmod +x zabbix_mass_import.sh
