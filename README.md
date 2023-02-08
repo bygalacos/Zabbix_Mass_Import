@@ -14,7 +14,7 @@ Releasing script that adds multiple zabbix hosts at the same time without any ha
 
 ## Usage
 
-Zabbix Agent Script requires a Windows or Linux operating system, depending on which platform you're using.
+**Zabbix Mass Import Script** requires a Windows or Linux operating system, depending on which platform you're using.
 
 ```sh
 First grant executable permissions using chmod +x zabbix_mass_import.sh
@@ -26,16 +26,16 @@ To launch the script:
 ./zabbix_mass_import.sh
 ./zabbix_mass_import.ps1
 ```
-Note: Try right click and "Run with Powershell" if you got errors while launching powershell script.
+Note: If you encounter any errors while launching the script, try right-clicking and selecting "Run with Powershell".
 
-Input file should be formatted like "$hostname [tab] $ip". Dont forget to press "tab" key between $hostname and $ip. Also if you try to add hostname that contains unsupported chars, you'll get error message while importing. This char correction feature will be added later on... 
+The input file must be formatted as "$hostname [tab] $ip". Please make sure to press the "tab" key to separate $hostname and $ip. In the case of hostnames with unsupported characters, an error message will appear during the import process. This feature for correcting unsupported characters will be added in the future. 
 
-Output file will be created upon execution which user can import xml file via Zabbix Web Interface.
+The output file will be generated upon script execution and can be imported into Zabbix via the web interface.
 
 ![zabbix_mass_import](https://user-images.githubusercontent.com/57764369/208874180-cefc2527-b031-4365-b2c0-da1d14ced5de.gif)
 
 ## License
 
-GPL-3.0
+This software is licensed under GPL-3.0
 
 **Made with ♥ by bygalacos**
