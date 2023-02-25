@@ -84,10 +84,6 @@ if (Test-Path $f_output) {
   }
 }
 
-# Prompt the user to enter the group name
-Write-Output "`nPlease insert your Group Name below...`n"
-$f_group = Read-Host 'Group Name'
-
 # Write the XML header to the output file
 Add-Content -Path $f_output "<?xml version='1.0' encoding='UTF-8'?>"
 Add-Content -Path $f_output "<zabbix_export>"
@@ -96,9 +92,6 @@ Add-Content -Path $f_output ([char]9 + "<date>" + (Get-Date -Format 'yyyy-MM-ddT
 
 # Write the group information to the output file
 Add-Content -Path $f_output ([char]9 + "<host_groups>")
-Add-Content -Path $f_output ([char]9 + ([char]9 + "<host_group>"))
-Add-Content -Path $f_output ([char]9 + ([char]9 + ([char]9 + "<name>$f_group</name>")))
-Add-Content -Path $f_output ([char]9 + ([char]9 + "</host_group>"))
 Add-Content -Path $f_output ([char]9 + "</host_groups>")
 
 # Write the host information to the output file
