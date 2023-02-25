@@ -84,6 +84,10 @@ if [ -f "$f_output" ]; then
   fi
 fi
 
+# Prompt the user to enter the group name
+printf "\nPlease insert your Group Name below...\n";
+read -p 'Group Name: ' f_group
+
 # Write the XML header to the output file
 printf "<?xml version='1.0' encoding='UTF-8'?>\n" >> $f_output
 printf "<zabbix_export>\n" >> $f_output
@@ -102,6 +106,9 @@ awk  -v Group=${f_group%%*( )} 'BEGIN {FS = " "} {hostname=$1; IP=$2}
 	 printf "\t\t\t<host>"hostname"</host>\n"
 	 printf "\t\t\t<name>"hostname"</name>\n"
 	 printf "\t\t\t<groups>\n"
+	 printf "\t\t\t\t<group>\n"
+	 printf "\t\t\t\t\t<name>"$f_group"</name>\n"
+	 printf "\t\t\t\t</group>\n"
 	 printf "\t\t\t</groups>\n"
 	 printf "\t\t\t<interfaces>\n"
 	 printf "\t\t\t\t<interface>\n"
