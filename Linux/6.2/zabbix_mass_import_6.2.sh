@@ -84,10 +84,6 @@ if [ -f "$f_output" ]; then
   fi
 fi
 
-# Prompt the user to enter the group name
-printf "\nPlease insert your Group Name below...\n";
-read -p 'Group Name: ' f_group
-
 # Write the XML header to the output file
 printf "<?xml version='1.0' encoding='UTF-8'?>\n" >> $f_output
 printf "<zabbix_export>\n" >> $f_output
@@ -96,9 +92,6 @@ printf "\t<date>"`date +"%Y-%m-%dT%TZ"`"</date>\n" >> $f_output
 
 # Write the group information to the output file
 printf "\t<host_groups>\n" >> $f_output
-printf "\t\t<host_group>\n" >> $f_output
-printf "\t\t\t<name>"$f_group"</name>\n" >> $f_output
-printf "\t\t</host_group>\n" >> $f_output
 printf "\t</host_groups>\n" >> $f_output
 
 # Write the host information to the output file
