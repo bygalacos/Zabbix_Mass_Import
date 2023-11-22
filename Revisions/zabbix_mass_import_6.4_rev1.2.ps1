@@ -72,7 +72,17 @@ Add-Content -Path $f_output ([char]9 + "</host_groups>")
 # Write the host information to the output file
 Add-Content -Path $f_output ([char]9 + "<hosts>")
 
+# Initialize progress bar variables
+$totalItems = (Get-Content $f_input).Count
+$currentItem = 0
+
 Get-Content $f_input | Foreach-Object {
+    # Increment the current item counter
+    $currentItem++
+    
+    # Update the progress bar
+    Write-Progress -Activity "Processing Hosts" -Status "$currentItem of $totalItems" -PercentComplete (($currentItem / $totalItems) * 100)
+	
     $parts = $_ -split [char]9
     $hostname = $parts[0]
     $IP = $parts[1]
@@ -111,6 +121,9 @@ Get-Content $f_input | Foreach-Object {
     Add-Content -Path $f_output ([char]9 + ([char]9 + ([char]9 + "<inventory_mode>DISABLED</inventory_mode>")))
     Add-Content -Path $f_output ([char]9 + ([char]9 + "</host>"))
 }
+
+# Complete the progress bar
+Write-Progress -Activity "Processing Hosts" -Completed
 
 # Close the host and zabbix_export tags in the output file
 Add-Content -Path $f_output ([char]9 + "</hosts>")
